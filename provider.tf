@@ -20,7 +20,6 @@ terraform {
 # configures the provider
 
 provider "azurerm" {
-  subscription_id = var.SUB_ID #Terraform knows which account to bill
   features {
     key_vault {
       purge_soft_delete_on_destroy = false   #If Terraform deletes a Key Vault, it won't permanently "purge" it, allowing you to recover it
@@ -30,4 +29,5 @@ provider "azurerm" {
 provider "azuread" {
   
 }
+
 
