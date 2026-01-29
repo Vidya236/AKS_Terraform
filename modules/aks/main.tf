@@ -3,13 +3,13 @@
 # latest version, if there is a var, use that version
 # make sure the version specified in var is valid
 
-data "azurerm_kubernetes_service_versions" "current" {
+data "azurerm_kubernetes_service_versions" "current" {  #azurerm_kubernetes_service_versions- every time you build a new cluster, it will stay up to date.
   location = var.location
-  include_preview = false  
+  include_preview = false  #doesn't accidentally run on a "Beta" or "Preview" version of Kubernetes
 }
  
 
-resource "azurerm_kubernetes_cluster" "aks-cluster" {
+resource "azurerm_kubernetes_cluster" "aks-cluster" { 
   name = var.cluster_name
   location              = var.location
   resource_group_name   = var.resource_group_name
@@ -51,4 +51,5 @@ resource "azurerm_kubernetes_cluster" "aks-cluster" {
 
     
   }
+
 
