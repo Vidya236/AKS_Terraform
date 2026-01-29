@@ -1,0 +1,6 @@
+rgname                 = "dev-rg"
+service_principal_name = "dev-spn"
+keyvault_name          = "dev-kv-101"
+SUB_ID = ""
+cluster_name = "dev-cluster"
+node_pool_name = "devnp"
